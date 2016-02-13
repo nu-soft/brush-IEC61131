@@ -1,10 +1,10 @@
 var chai = require('chai');
 var expect = chai.expect;
 var match = require('syntaxhighlighter-match');
-var Brush = require('./brush');
+var Brush = require('./IEC61131-brush');
 var sample = require('fs').readFileSync('./sample.txt', 'utf8');
 
-describe('brush-delphi', function() {
+describe('brush-IEC61131', function() {
   var instance = null;
 
   before(function() {

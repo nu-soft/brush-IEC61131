@@ -50,5 +50,5 @@ function Brush() {
 };
 
 Brush.prototype = new BrushBase();
-Brush.aliases = ['structuredtext', 'ST', 'IEC61131'];
+Brush.aliases = ['structuredtext', 'ST', 'IEC61131','st','iec61131'];
 module.exports = Brush;

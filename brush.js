@@ -54,12 +54,12 @@ function Brush() {
     },
     {
       //single line comment
-      regex: SyntaxHighlighter.regexLib.singleLineCComments,
+      regex: regexLib.singleLineCComments,
       css: 'comments'
     },
     {
       //string literal 'myvalue'
-      regex: SyntaxHighlighter.regexLib.singleQuotedString,
+      regex: regexLib.singleQuotedString,
       css: 'string'
     },
     {

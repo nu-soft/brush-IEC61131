@@ -1,4 +1,4 @@
-# brush-delphi
+# brush-IEC61131
 
 [![Build Status](https://travis-ci.org/nu-soft/brush-IEC61131.svg)](https://travis-ci.org/nu-soft/brush-IEC61131)
 ![Downloads](https://img.shields.io/npm/dm/brush-IEC61131.svg)

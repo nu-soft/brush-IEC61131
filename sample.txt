@@ -1,0 +1,154 @@
+(* 
+Note this is a compilation of samples available at http://infosys.beckhoff.com/
+*)
+
+
+PROGRAM MAIN
+VAR
+  PLCVar : ARRAY [0..99] OF INT;
+  Index: BYTE;
+END_VAR
+
+FOR Index := 0 TO 99 DO
+  PLCVar[Index] := 3500 + INDEX;
+END_FOR
+
+
+TYPE PLCStruct
+STRUCT
+  intVal   : INT;  (*Offset 0*) 
+  dintVal  : DINT; (*Offset 2*) 
+  byteVal  : SINT; (*Offset 6*)  
+  lrealVal : LREAL;(*Offset 7*) 
+  realVal  : REAL; (*Offset 15 --> Total size 19 Bytes*) 
+END_STRUCT
+END_TYPE
+
+PROGRAM MAIN
+VAR
+ boolVal	  : BOOL;
+ intVal    : INT;
+ dintVal   : DINT;
+ sintVal   : SINT;
+ lrealVal  : LREAL;
+ realVal   : REAL;
+ stringVal : STRING(10);
+END_VAR
+
+PROGRAM MAIN
+VAR
+    ;
+END_VAR
+
+PROGRAM MAIN
+VAR
+ text : STRING[30] := 'hello';
+END_VAR
+
+PROGRAM MAIN
+VAR 
+    Time1:TIME := T#21h33m23s231ms;
+    Date1:DT:=DT#1993-06-12-15:36:55.40;
+END_VAR
+
+
+PROGRAM MAIN
+VAR
+	REAL32_1 AT %MB0 : REAL;  (* 1 *)
+	REAL32_2 AT %MB4 : REAL;  (* 2 *)
+	REAL32_3 AT %MB8 : REAL;  (* 3 *)
+	REAL32_4 AT %MB12: REAL;  (* 4 *)
+	REAL32_5 AT %MB16: REAL;  (* 5 *)
+
+	REAL64_1 AT %MB20 : LREAL;  (* 6 *)
+	REAL64_2 AT %MB28 : LREAL;  (* 7 *)
+	REAL64_3 AT %MB36 : LREAL;  (* 8 *)
+	REAL64_4 AT %MB44 : LREAL;  (* 9 *)
+	REAL64_5 AT %MB52 : LREAL;  (* 10 *)
+
+	INT32_1 AT %MB60 : DINT;  (* 11 *)
+	INT32_2 AT %MB64 : DINT;  (* 12 *)
+	INT32_3 AT %MB68 : DINT;  (* 13 *)
+	INT32_4 AT %MB72 : DINT;  (* 14 *)
+	INT32_5 AT %MB76 : DINT;  (* 15 *)
+
+	UINT32_1 AT %MB80 : UDINT;  (* 16 *)
+	UINT32_2 AT %MB84 : UDINT;  (* 17 *)
+	UINT32_3 AT %MB88 : UDINT;  (* 18 *)
+	UINT32_4 AT %MB92 : UDINT;  (* 19 *)
+	UINT32_5 AT %MB96 : UDINT;  (* 20 *)
+
+	INT16_1 AT %MB100 : INT;  (* 21 *)
+	INT16_2 AT %MB102 : INT;  (* 22 *)
+	INT16_3 AT %MB104 : INT;  (* 23 *)
+	INT16_4 AT %MB106 : INT;  (* 24 *)
+	INT16_5 AT %MB108 : INT;  (* 25 *)
+
+	UINT16_1 AT %MB110 : UINT;  (* 26 *)
+	UINT16_2 AT %MB112 : UINT;  (* 27 *)
+	UINT16_3 AT %MB114 : UINT;  (* 28 *)
+	UINT16_4 AT %MB116 : UINT;  (* 29 *)
+	UINT16_5 AT %MB118 : UINT;  (* 30 *)
+
+	INT8_1 AT %MB120 : SINT;  (* 31 *)
+	INT8_2 AT %MB121 : SINT;  (* 32 *)
+	INT8_3 AT %MB122 : SINT;  (* 33 *)
+	INT8_4 AT %MB123 : SINT;  (* 34 *)
+	INT8_5 AT %MB124 : SINT;  (* 35 *)
+
+	UINT8_1 AT %MB125 : USINT;  (* 36 *)
+	UINT8_2 AT %MB126 : USINT;  (* 37 *)
+	UINT8_3 AT %MB128 : USINT;  (* 38 *)
+	UINT8_4 AT %MB129 : USINT;  (* 39 *)
+	UINT8_5 AT %MB130 : USINT;  (* 40 *)
+
+	BOOL_1 AT %MX131.0 : BOOL;  (* 41 *)
+	BOOL_2 AT %MX131.1 : BOOL;  (* 42 *)
+	BOOL_3 AT %MX131.2 : BOOL;  (* 43 *)
+	BOOL_4 AT %MX131.3 : BOOL;  (* 44 *)
+	BOOL_5 AT %MX131.4 : BOOL;  (* 45 *)
+
+	ARRAY_1 : ARRAY[1 .. 10] OF SINT; (* 46 *)
+	ARRAY_2 : ARRAY[1 .. 10] OF INT;  (* 47 *)
+	ARRAY_3 : ARRAY[1 .. 10] OF DINT; (* 48 *)
+	ARRAY_4 : ARRAY[1 .. 10] OF LREAL;(* 49 *)
+	ARRAY_5 : ARRAY[1 .. 10] OF BOOL; (* 50 *)
+
+	STRING_1 : STRING(20);
+END_VAR
+
+TYPE TSimpleStruct :
+STRUCT
+	lrealVal: LREAL := 1.23;
+	dintVal1: DINT := 120000;
+END_STRUCT
+END_TYPE
+
+TYPE TComplexStruct :
+STRUCT
+	intVal : INT:=1200;
+	dintArr: ARRAY[0..3] OF DINT:= 1,2,3,4;
+	boolVal: BOOL := FALSE;
+	byteVal: BYTE:=10;
+	stringVal : STRING(5) := 'hallo';
+	simpleStruct1: TSimpleStruct;
+END_STRUCT
+END_TYPE
+
+PROGRAM MAIN
+VAR
+	(*primitive Types*)
+	Bool1:BOOL := FALSE;
+	int1:INT := 30000;
+	dint1:DINT:=125000;
+	usint1:USINT:=200;
+	real1:REAL:= 1.2;
+	lreal1:LREAL:=3.5;
+	
+	(*string Types*)
+	str1:STRING := 'this is a test string';
+	str2:STRING(5) := 'hallo';
+	
+	(*struct Types*)
+	complexStruct1 : TComplexStruct;
+END_VAR

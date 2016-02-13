@@ -1,0 +1,48 @@
+{
+  "name": "brush-IEC61131",
+  "version": "0.0.1",
+  "description": "IEC 61131-3 brush module for SyntaxHighlighter.",
+  "keywords": [
+    "syntaxhighlighter",
+    "brush",
+    "IEC 61131",
+    "ST",
+    "Structured Text"
+  ],
+  "homepage": "https://github.com/nu-soft/brush-IEC61131",
+  "bugs": "https://github.com/nu-soft/brush-IEC61131/issues",
+  "author": {
+    "name": "Paweł Paluch",
+    "url": "https://github.com/nu-soft"
+  },
+  "main": "brush.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nu-soft/brush-IEC61131.git"
+  },
+  "scripts": {
+    "test": "babel-node --only='syntaxhighlighter-*,brush-*' node_modules/.bin/_mocha --opts mocha.opts test.js"
+  },
+  "dependencies": {
+    "brush-base": "^4.0.0",
+    "syntaxhighlighter-regex": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.4.5",
+    "babel-core": "^6.1.21",
+    "babel-preset-es2015": "^6.1.18",
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4",
+    "syntaxhighlighter-match": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=4",
+    "npm": ">=2"
+  },
+  "license": "WTFPL",
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}

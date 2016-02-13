@@ -27,26 +27,51 @@ function Brush() {
 
   this.regexList = [
     {
+      //time literal
+      regex: /(T|t|TIME|time)(?=.*([hms]|[HMS]))#(\d+(h|H))?(\d+(m|M))?(\d+(s|s))?(\d+(ms|MS))?/g,
+      css: 'color2'
+    },
+    {
+      // date and time literal
+      regex: /(DT|dt|date_and_time|DATE_AND_TIME)#\d{4}-\d{2}-\d{2}-\d{2}:\d{2}:\d{2}\.\d{2}/g,
+      css: 'color2'
+    },
+    {
+      // time of day literal
+      regex: /(TOD|tod|time_of_day|TIME_OF_DAY)#\d+:\d+(:\d+)?((\.\d+)|(\.?))/g,
+      css: 'color2'
+    },
+    {
+      //date literal
+      regex: /(D|d|DATE|date)#\d{4}-\d{2}-\d{2}/g,
+      css: 'color2'
+    },
+
+    {
+      //multiline comment (* *)
       regex: /\(\*[\s\S]*?\*\)/gm,
       css: 'comments'
     },
     {
-      regex: regexLib.singleLineCComments,
+      //single line comment
+      regex: SyntaxHighlighter.regexLib.singleLineCComments,
       css: 'comments'
     },
     {
-      regex: regexLib.singleQuotedString,
+      //string literal 'myvalue'
+      regex: SyntaxHighlighter.regexLib.singleQuotedString,
       css: 'string'
     },
     {
+      //number integers, floating point with dot or exponential
       regex: /\b\d+([\.eE]\d+)?\b/g,
       css: 'value'
     },
     {
+      //keywords
       regex: new RegExp(this.getKeywords(keywords), 'gmi'),
       css: 'keyword'
-    }
-		];
+    }];
 };
 
 Brush.prototype = new BrushBase();

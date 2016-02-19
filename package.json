@@ -1,6 +1,6 @@
 {
   "name": "brush-IEC61131",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "IEC 61131-3 brush module for SyntaxHighlighter.",
   "keywords": [
     "syntaxhighlighter",

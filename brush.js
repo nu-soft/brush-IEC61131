@@ -46,15 +46,14 @@ function Brush() {
       regex: /(D|d|DATE|date)#\d{4}-\d{2}-\d{2}/g,
       css: 'color2'
     },
-
+    {
+      //direct adressing
+      regex: /%[A-Z]{1,2}\d+(\.\d+)*/g,
+      css: 'color2'
+    },
     {
       //multiline comment (* *)
       regex: /\(\*[\s\S]*?\*\)/gm,
-      css: 'comments'
-    },
-    {
-      //single line comment
-      regex: regexLib.singleLineCComments,
       css: 'comments'
     },
     {
